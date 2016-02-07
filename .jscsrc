@@ -1,0 +1,20 @@
+{
+  "esnext": true,
+  "preset": "airbnb",
+  "excludeFiles": [
+    "node_modules/**",
+    "dist/**",
+    "templates/**"
+  ],
+  "disallowMultipleLineBreaks": false,
+  "disallowSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "disallowTabs": false,
+  "maximumLineLength": 80,
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requireTrailingComma": false,
+  "validateIndentation": false,
+}
