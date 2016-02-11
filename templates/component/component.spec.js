@@ -1,7 +1,9 @@
+/* jscs:disable */
 import {<%= camelCaseName %>} from './<%= dottedName %>';
-import {<%= titleCaseName %>Controller} from './<%= dottedName %>.controller';
-import {<%= camelCaseName %>Directive} from './<%= dottedName %>.directive';
+import {<%= titleCaseName %>Controller as Controller} from './<%= dottedName %>.controller';
+import {<%= camelCaseName %>Directive as Directive} from './<%= dottedName %>.directive';
 import template from './<%= dottedName %>.html';
+/* jscs:enable */
 
 describe('<%= titleCaseName %>', () => {
   let $rootScope;
@@ -29,7 +31,7 @@ describe('<%= titleCaseName %>', () => {
     $rootScope = _$rootScope_;
 
     makeController = () => {
-      return new <%= titleCaseName %>Controller();
+      return new Controller();
     };
   }));
 
@@ -41,10 +43,6 @@ describe('<%= titleCaseName %>', () => {
     it('has an appropriate name', () => {
       expect(<%= camelCaseName %>.name).to.equal('<%= camelCaseName %>');
     });
-
-    // TODO: [GP] Add test templates to see if it registers certain
-    // modules/factories/etc
-    // TODO: [GP] Add test templates for correct routing
   });
 
 
@@ -80,10 +78,22 @@ describe('<%= titleCaseName %>', () => {
         it('calls other functions [REMOVE IF NOTHING IN #_activate()]');
 
         // // 1.C. Create a spy, test if it's called in #activate()
+        // // If it's not a promise, use:
         // it('loads the currentUser', () => {
         //   sinon.spy(Users, 'getCurrent')
         //   makeController();
         //   expect(Users.getCurrent.called).to.be.true
+        // });
+
+        // // If you do not want it called (aka it's stubbed) and it returns
+        // // a promise, use:
+        // it('calls users#resendConfirmation', () => {
+        //  const stub = sinon
+        //    .stub(Users, 'resendConfirmation')
+        //    .returnsPromise();
+
+        //  makeController();
+        //  expect(Users.resendConfirmation.called).to.be.true;
         // });
       });
     });
@@ -97,12 +107,24 @@ describe('<%= titleCaseName %>', () => {
       });
 
       // // 1.D. Create a spy, test if it's called by functions in the controller
+      // // If it's not a promise, use:
       // describe('#updateCurrentUser()', () => {
       //   it('updates the user', () => {
-      //     sinon.spy(Users, 'updateUserById')
+      //     sinon.spy(Users, 'updateUserById');
       //     controller.updateCurrentUser();
-      //     expect(Users.updateUserById.called).to.be.true
+      //     expect(Users.updateUserById.called).to.be.true;
       //   });
+      // });
+
+      // // If you do not want it called (aka it's stubbed) and it returns
+      // // a promise, use:
+      // it('calls users#resendConfirmation', () => {
+      //  const stub = sinon
+      //    .stub(Users, 'resendConfirmation')
+      //    .returnsPromise();
+
+      //  controller.resendConfirmation();
+      //  expect(stub.called).to.be.true;
       // });
     });
   });
@@ -122,7 +144,7 @@ describe('<%= titleCaseName %>', () => {
 
 
   describe('Directive', () => {
-    let directive = <%= camelCaseName %>Directive();
+    let directive = Directive();
 
     it('uses the right template', () => {
       expect(directive.template).to.equal(template);
@@ -133,7 +155,7 @@ describe('<%= titleCaseName %>', () => {
     });
 
     it('uses the right controller', () => {
-      expect(directive.controller).to.equal(<%= titleCaseName %>Controller);
+      expect(directive.controller).to.equal(Controller);
     });
 
     it('has an isolate scope', () => {

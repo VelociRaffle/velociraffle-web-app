@@ -12,7 +12,7 @@ const <%= camelCaseName %>Route = ($stateProvider) => {
 
 <%= camelCaseName %>Route.$inject = ['$stateProvider'];
 
-export const <%= camelCaseName %> = angular.module('camelCaseName', [
+export const <%= camelCaseName %> = angular.module('<%= camelCaseName %>', [
     uiRouter,
     shared.name
   ])
