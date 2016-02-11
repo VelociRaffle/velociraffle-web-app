@@ -19,11 +19,26 @@ NODE_ENV=development
 
 ## Contributing
 
+### Background info
+
+* Review the [mockups](https://app.moqups.com/rgpass/TTTDn1XmmS/view/page/a6ce2d8bb)
+* Review the Wiki
+
+### Merging in
+
 * All contributions must be well tested
 * Linting must pass
   * Run via `$ npm run lint`
 * All tests must be passing
   * Run via `$ npm test`
+* The easiest way to make sure the PR is solid: run `$ npm run precommit`
+* All-star? Add the following to `~/.bash_profile` then just run `$ ngac "My commit message"`
+
+```
+alias npc="npm run precommit"
+alias gac="git add . -A && git commit -m"
+alias ngac="npc && gac"
+```
 
 ## Creating a new component
 
