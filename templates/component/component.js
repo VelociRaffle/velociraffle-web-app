@@ -6,7 +6,7 @@ import {shared} from '../../shared/shared';
 const <%= camelCaseName %>Route = ($stateProvider) => {
   $stateProvider.state('<%= spineCaseName %>', {
     url: '/<%= spineCaseName %>',
-    template: '<div <%- spineCaseName %>></div>'
+    template: '<<%- spineCaseName %>></<%- spineCaseName %>>'
   });
 };
 
