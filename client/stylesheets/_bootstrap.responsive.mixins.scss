@@ -1,0 +1,25 @@
+@import "client/stylesheets/bootstrap/_variables.scss";
+
+@mixin xs-only {
+  @media (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin sm-only {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media (min-width: $screen-lg-min) {
+    @content;
+  }
+}
