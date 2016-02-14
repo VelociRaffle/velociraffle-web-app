@@ -1,5 +1,29 @@
 @import "client/stylesheets/_variables.scss";
+@import "client/stylesheets/_bootstrap.responsive.mixins.scss";
+
+$logo-width-xs: 75%;
+$logo-width-sm: 75%;
+$logo-width-md: 60%;
+$logo-width-lg: 60%;
 
 #welcome {
   position: relative;
+
+  #main-logo {
+    @include xs-only {
+      width: $logo-width-xs;
+    }
+
+    @include sm-only {
+      width: $logo-width-sm;
+    }
+
+    @include md-only {
+      width: $logo-width-md;
+    }
+
+    @include lg-only {
+      width: $logo-width-lg;
+    }
+  }
 }

@@ -20,6 +20,7 @@ describe('Welcome', () => {
   }));
 
   const vmProperties = [
+    { name: 'logo' }
   ];
 
   describe('Module', () => {
