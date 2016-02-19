@@ -1,0 +1,8 @@
+<section id="active-raffles">
+  <h1>Will be an index of raffles</h1>
+
+  <div ng-repeat="raffle in vm.raffles">
+    <img ng-src="{{ raffle.item.thumbnail }}" />
+    <p ng-bind="raffle.item.name"></p>
+  </div>
+</section>

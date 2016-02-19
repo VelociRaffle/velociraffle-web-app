@@ -7,6 +7,7 @@ import {appDirective} from './app.directive';
 import {defaultRoute} from './app.default.route';
 import {shared} from './shared/shared';
 import {welcome} from './components/welcome/welcome';
+import {activeRaffles} from './components/active.raffles/active.raffles';
 
 // Modules for this file
 import angular from 'angular';
@@ -16,7 +17,8 @@ angular
   .module('vr', [
     uiRouter,
     shared.name,
-    welcome.name
+    welcome.name,
+    activeRaffles.name
   ])
   .directive('app', appDirective)
   .config(defaultRoute);
