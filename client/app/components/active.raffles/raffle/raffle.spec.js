@@ -1,14 +1,14 @@
 /* jscs:disable */
-import {activeRaffles} from './active.raffles';
-import {ActiveRafflesController as Controller} from './active.raffles.controller';
-import {activeRafflesDirective as Directive} from './active.raffles.directive';
-import template from './active.raffles.html';
+import {raffle} from './raffle';
+import {RaffleController as Controller} from './raffle.controller';
+import {raffleDirective as Directive} from './raffle.directive';
+import template from './raffle.html';
 /* jscs:enable */
 
-describe('ActiveRaffles', () => {
+describe('Raffle', () => {
   let makeController;
 
-  beforeEach(window.module(activeRaffles.name));
+  beforeEach(window.module(raffle.name));
 
   beforeEach(inject(() => {
     makeController = () => {
@@ -17,12 +17,11 @@ describe('ActiveRaffles', () => {
   }));
 
   const vmProperties = [
-    { name: 'raffleEvents', type: 'array' }
   ];
 
   describe('Module', () => {
     it('has an appropriate name', () => {
-      expect(activeRaffles.name).to.equal('activeRaffles');
+      expect(raffle.name).to.equal('raffle');
     });
   });
 
@@ -53,12 +52,6 @@ describe('ActiveRaffles', () => {
             }
           });
         });
-      });
-    });
-
-    describe('functions', () => {
-      describe('#myPublicFunction()', () => {
-        it('tests public functions [REMOVE IF NO PUBLIC FUNCS BOUND TO VM]');
       });
     });
   });

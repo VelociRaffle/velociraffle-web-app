@@ -1,0 +1,26 @@
+<section class="raffle">
+  <div class="row">
+    <div class="col-xs-4 text-center">
+      <img ng-src="{{ vm.raffle.item.thumbnailUrl }}" />
+    </div>
+
+    <div class="col-xs-8">
+      <h4>{{ vm.raffle.item.name }}</h4>
+
+      <div class="progress">
+        <div
+          class="progress-bar progress-bar-warning"
+          style="width: {{ 100 * vm.raffle.tickets.remaining / vm.raffle.tickets.total }}%">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <a
+        class="btn btn-block btn-primary"
+        ui-sref="buy({ id: raffle.id })">
+        Buy Tickets
+      </a>
+    </div>
+  </div>
+</section>

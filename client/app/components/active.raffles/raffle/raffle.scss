@@ -1,0 +1,25 @@
+@import "client/stylesheets/_variables.scss";
+
+.raffle {
+  position: relative;
+
+  margin-bottom: 40px;
+
+  img {
+    max-height: 95px;
+  }
+
+  h4 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  .progress {
+    height: 18px;
+    margin-bottom: 0px;
+  }
+
+  .btn {
+    margin-top: 15px;
+  }
+}

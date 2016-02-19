@@ -1,5 +1,35 @@
+@import 'client/stylesheets/_variables.scss';
+
 $bottom-extra-buffer: 50px;
 
 #app {
   margin-bottom: $bottom-extra-buffer;
+
+  a {
+    color: $brand-primary;
+
+    transition: color 0.1s ease-in;
+
+    &:hover, &:focus {
+      color: $brand-warning;
+
+      text-decoration: none;
+    }
+  }
+
+  a.btn {
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  a.btn.btn-link {
+    color: $brand-primary;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
 }

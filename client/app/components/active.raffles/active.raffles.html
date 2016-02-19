@@ -1,8 +1,36 @@
 <section id="active-raffles">
-  <h1>Will be an index of raffles</h1>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Active Raffles</h1>
+    </div>
+  </div>
 
-  <div ng-repeat="raffle in vm.raffles">
-    <img ng-src="{{ raffle.item.thumbnail }}" />
-    <p ng-bind="raffle.item.name"></p>
+  <div
+    class="row"
+    ng-repeat="raffleEvent in vm.raffleEvents">
+    <div class="col-xs-12">
+      <h2>
+        <a
+          ng-href="{{ raffleEvent.charity.url }}"
+          target="_blank">
+          {{ raffleEvent.charity.name }}
+        </a>
+      </h2>
+      <p class="description">
+        {{ raffleEvent.charity.description }}
+      </p>
+      <a
+        ng-href="{{ raffleEvent.charity.url }}"
+        class="btn btn-block btn-link learn-more"
+        target="_blank">
+        Learn More
+      </a>
+    </div>
+
+    <div
+      class="col-xs-12"
+      ng-repeat="raffle in raffleEvent.raffles">
+      <span raffle="raffle"></span>
+    </div>
   </div>
 </section>
