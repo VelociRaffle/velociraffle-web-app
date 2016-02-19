@@ -13,6 +13,8 @@ import {activeRaffles} from './components/active.raffles/active.raffles';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
+import {scrollTop} from './shared/misc/scroll.top';
+
 angular
   .module('vr', [
     uiRouter,
@@ -21,4 +23,5 @@ angular
     activeRaffles.name
   ])
   .directive('app', appDirective)
-  .config(defaultRoute);
+  .config(defaultRoute)
+  .run(scrollTop);
