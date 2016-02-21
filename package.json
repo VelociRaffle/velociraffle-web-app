@@ -8,7 +8,7 @@
     "precommit": "jscs . --fix && eslint ./client/app && npm test",
     "postinstall": "npm run build",
     "dev-client": "gulp",
-    "dev-server": "nodemon server/index.js --exec babel-node --presets es2015",
+    "dev-server": "env $(cat .env) nodemon server/index.js --exec babel-node --presets es2015",
     "test": "karma start"
   },
   "repository": {
@@ -44,6 +44,7 @@
     "jsonwebtoken": "^5.7.0",
     "lodash": "^4.5.0",
     "mongoose": "^4.4.4",
+    "mongoose-validator": "^1.2.4",
     "morgan": "^1.6.1",
     "normalize.css": "^3.0.3",
     "serve-favicon": "^2.3.0",

@@ -5,6 +5,10 @@ const config = {
   stage: 'staging',
   prod: 'production',
   port: process.env.PORT || 5000,
+  expireTime: process.env.EXPIRE_TIME,
+  secrets: {
+    jwt: process.env.JWT
+  }
 };
 
 // sets NODE_ENV to config.dev if not set
