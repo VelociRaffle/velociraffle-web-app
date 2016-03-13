@@ -4,3 +4,5 @@ import logger from './app/util/logger';
 
 app.listen(config.port);
 logger.info(`⚡⚡  Listening on localhost:${config.port} ⚡⚡`);
+
+export default app;
