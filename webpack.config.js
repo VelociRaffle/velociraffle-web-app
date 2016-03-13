@@ -13,7 +13,7 @@ module.exports = {
 			{ test: /\.(png|jpg|jpeg)$/, loader: 'file' },
 			{
 				test: /\.js$/,
-				loader: 'babel?stage=1',
+				loader: 'babel',
 				exclude: [/client\/lib/, /node_modules/, /\.spec\.js/]
 			},
 			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url' },
