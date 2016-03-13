@@ -1,2 +1,2 @@
-web: node server.js
-dev: nodemon server.js
+web: node serverDist/index.js
+dev: nodemon server/index.js --exec babel-node --presets es2015
