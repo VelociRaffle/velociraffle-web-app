@@ -9,6 +9,7 @@ import User from '../api/v1/user/model';
 const checkToken = expressJWT({ secret: config.secrets.jwt });
 
 export function decodeToken(req, res, next) {
+  // checks if token is part of url instead of header (adds flexibility)
   if (req.query && req.query.hasOwnProperty('token')) {
     req.header.authorization = 'Bearer ' + req.query.token;
   }
