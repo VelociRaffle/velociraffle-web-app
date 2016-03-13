@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 
 const config = {
   dev: 'development',
+  test: 'testing',
   stage: 'staging',
   prod: 'production',
   port: process.env.PORT || 5000,
