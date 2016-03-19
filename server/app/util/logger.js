@@ -7,7 +7,6 @@ const logger = new Logger({
       level: config.logLevel,
       colorize: true
     })
-    /* new (transports.File)()({ filename: 'somefile.log' }) */
   ]
 });
 
