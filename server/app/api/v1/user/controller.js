@@ -1,7 +1,10 @@
 import merge from 'lodash/merge';
-import { NotFoundError, AlreadyInUseError } from 'common-errors';
+import {
+  NotFoundError, AlreadyInUseError, ValidationError
+} from 'common-errors';
 import User from './model';
-import { signToken } from '../../../auth';
+
+import { VALID_OBJECT_ID } from '../../../util/validations';
 
 /* ********************
  *  HELPER FUNCTIONS *
@@ -10,7 +13,7 @@ import { signToken } from '../../../auth';
 const isExistingUser = ({ email }) => (
   User.findOne({ email })
     .exec()
-    .then(existingUser => {
+    .then((existingUser) => {
       if (existingUser) {
         throw new AlreadyInUseError('User', 'email');
       }
@@ -24,21 +27,31 @@ const isExistingUser = ({ email }) => (
  * *********************/
 
 /**
- * Params middleware for any route with /user/:id
+ * Params middleware for any route with /user/:userId
  * sets req.user
  */
-const params = (req, res, next, id) => {
-  User.findById(id)
-    .exec()
-    .then((user) => {
-      if (!user) {
-        throw new NotFoundError('User not found');
-      } else {
-        req.user = user;
-        next();
-      }
-    })
-    .catch(err => next(err));
+const params = (req, res, next, userId) => {
+  if (userId.match(VALID_OBJECT_ID)) {
+    User.findById(userId)
+      .exec()
+      .then((user) => {
+        if (!user) {
+          throw new NotFoundError('User not found');
+        } else {
+          req.user = user;
+          next();
+        }
+      })
+      .catch(err => next(err));
+  } else {
+    next(
+      new ValidationError(
+        'charityId must be valid ObjectId',
+        VALID_OBJECT_ID,
+        'charityId'
+      )
+    );
+  }
 };
 
 /**
@@ -74,8 +87,7 @@ const create = (req, res, next) => {
     isExistingUser(req.body)
       .then(() => new User(req.body).save())
       .then((user) => {
-        const token = signToken(user._id);
-        return res.json({ token });
+        return res.json(user);
       })
       .catch(err => next(err));
 };
@@ -89,14 +101,6 @@ const destroy = (req, res, next) => (
     .catch(err => next(err))
 );
 
-/**
- * Logs in user
- */
-const login = (req, res) => {
-  const token = signToken(req.user._id);
-  return res.json({ token });
-};
-
 export default {
-  params, all, get, update, create, destroy, login
+  params, all, get, update, create, destroy
 };
