@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import request from 'supertest-as-promised';
-import app from '../../index';
-import '../util';
+import app from '../../../index';
+import '../../util';
 
 describe('User routes', function userRoutes() {
   describe('#signup', function signUp() {

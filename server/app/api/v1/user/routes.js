@@ -1,23 +1,17 @@
 import { Router } from 'express';
 import Users from './controller';
-import { decodeToken, currentUser, verifyUser } from '../../../auth';
 
-const router = Router();
-const checkUser = [decodeToken, currentUser];
+const userRouter = Router();
 
-router.param('id', Users.params);
+userRouter.param('userId', Users.params);
 
-router.get('/me', checkUser, Users.get);
-
-router.post('/login', verifyUser, Users.login);
-
-router.route('/')
+userRouter.route('/')
   .get(Users.all)
   .post(Users.create);
 
-router.route('/:id')
+userRouter.route('/:userId')
   .get(Users.get)
   .put(Users.update)
   .delete(Users.destroy);
 
-export default router;
+export default userRouter;
