@@ -8,7 +8,7 @@
     "precommit": "jscs . --fix && eslint ./client/app && npm test",
     "postinstall": "npm run build",
     "dev-client": "gulp",
-    "dev-server": "env $(cat .env) nodemon server/index.js --exec babel-node",
+    "dev-server": "nf run nodemon server/index.js",
     "test": "karma start",
     "server-test": "cross-env NODE_ENV=testing env $(cat .env) mocha --compilers js:babel-register ./server/app/test/**/*.spec.js"
   },
@@ -36,7 +36,7 @@
     "bcrypt": "^0.8.5",
     "bluebird": "^3.3.1",
     "body-parser": "^1.14.1",
-    "common-errors": "^0.5.3",
+    "common-errors": "github:lackeyjb/node-common-errors",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-jwt": "^3.3.0",
