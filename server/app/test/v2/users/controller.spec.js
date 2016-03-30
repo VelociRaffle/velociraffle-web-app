@@ -13,7 +13,7 @@ describe('User routes', function userRoutes() {
       lastName: 'Doe'
     };
 
-    it('should send a token with valid user', function createUser() {
+    it('sends a token with valid user', function createUser() {
       return request(app)
         .post(signup)
         .send(user)
@@ -26,7 +26,7 @@ describe('User routes', function userRoutes() {
         });
     });
 
-    it('should respond with 400 with invalid email', function invalidEmail() {
+    it('responds with 400 if email invalid', function invalidEmail() {
       return request(app)
         .post(signup)
         .send({
@@ -39,7 +39,7 @@ describe('User routes', function userRoutes() {
         });
     });
 
-    it('should respond with 400 with invalid pw', function invalidPassword() {
+    it('responds with 400 if password invalid', function invalidPassword() {
       return request(app)
         .post(signup)
         .send({
@@ -52,7 +52,7 @@ describe('User routes', function userRoutes() {
         });
     });
 
-    it('should respond with 400 without firstName', function noFirstName() {
+    it('responds with 400 without firstName', function noFirstName() {
       return request(app)
         .post(signup)
         .send({
@@ -65,7 +65,7 @@ describe('User routes', function userRoutes() {
         });
     });
 
-    it('should respond with 400 without lastName', function noLastName() {
+    it('responds with 400 without lastName', function noLastName() {
       return request(app)
         .post(signup)
         .send({
@@ -78,7 +78,7 @@ describe('User routes', function userRoutes() {
         });
     });
 
-    it('should return 409 if user already exists', function alreadyExists() {
+    it('sends 409 status if user already exists', function alreadyExists() {
       return request(app)
         .post(signup)
         .send(user)
