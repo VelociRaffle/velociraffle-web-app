@@ -1,3 +1,4 @@
+import find from 'lodash/find';
 import findIndex from 'lodash/findIndex';
 import merge from 'lodash/merge';
 import { NotFoundError, NotPermittedError, ValidationError } from 'common-errors';
@@ -5,8 +6,7 @@ import Charity from '../model';
 import Raffle from './model';
 import User from '../../user/model';
 
-import { VALID_OBJECT_ID } from '../../../../util/validations';
-
+import { VALID_OBJECT_ID } from '../../../../util/constants';
 
 /* *********************
  * EXPORTED FUNCTIONS *
@@ -93,31 +93,32 @@ const create = (req, res, next) => {
 const purchase = (req, res, next) => {
   const hasUserId = req.query.hasOwnProperty('userId');
   if (req.raffle.isActive) {
-    const findOrCreateUser = hasUserId
-      ? findByUserId
-      : createUser;
+    const findOrCreateUser = hasUserId ? findByUserId : createUser;
 
     findOrCreateUser()
       .then(addTickets)
         .all()
       .then(([raffle, user]) => {
-        const buyer = raffle.purchases.filter(
+        const { email, firstName, lastName } = user;
+        const { count } = raffle.purchases.filter(
           purchase => purchase.buyer === user._id
         )[0];
         return res.json({
-          count: buyer.count,
+          count,
           user: {
-            email: user.email,
-            firstName: user.firstName,
-            lastName: user.lastName
+            email,
+            firstName,
+            lastName
           }
         });
       })
       .catch(err => next(err));
   } else {
-    next(new NotPermittedError(
-      'Tickets cannot be purchased after raffle has ended.'
-    ));
+    next(
+      new NotPermittedError(
+        'Tickets cannot be purchased after raffle has ended.'
+      )
+    );
   }
 
   function findByUserId() {
@@ -153,7 +154,7 @@ const purchase = (req, res, next) => {
   function addTickets(user) {
     // checks for if user already purchased raffles
     const purchaseIndex = findIndex(req.raffle.purchases, ['buyer', user._id]);
-    const userRafflesIndex = findIndex(user.raffles, req.raffle._id);
+    const userRaffles = find(user.raffles, req.raffle._id);
 
     if (purchaseIndex > -1) {
       // remove duplicate purchase from purchases array
@@ -170,7 +171,7 @@ const purchase = (req, res, next) => {
         buyer: user._id
       });
     }
-    if (userRafflesIndex > -1) {
+    if (userRaffles) {
       return [req.raffle.save(), user];
     } else {
       user.raffles.push(req.raffle);

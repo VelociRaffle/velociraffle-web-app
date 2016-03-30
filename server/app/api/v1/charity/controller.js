@@ -4,13 +4,13 @@ import {
 import merge from 'lodash/merge';
 import Charity from './model';
 
-import { VALID_OBJECT_ID } from '../../../util/validations';
+import { VALID_OBJECT_ID } from '../../../util/constants';
 
 /* ********************
  *  HELPER FUNCTIONS *
  * ********************/
 
-const isExistingCharity = ({ name }) => (
+const _isExistingCharity = ({ name }) => (
   Charity.findOne({ name })
     .exec()
     .then((exisitingCharity) => {
@@ -72,7 +72,7 @@ const get = (req, res) => res.json(req.charity);
  * Updates charity
  */
 const update = (req, res, next) => {
-  isExistingCharity(req.body)
+  _isExistingCharity(req.body)
     .then(() => merge(req.charity, req.body))
     .then(charity => charity.save())
     .then(savedCharity => {
@@ -85,7 +85,7 @@ const update = (req, res, next) => {
  * Creates new charity
  */
 const create = (req, res, next) => {
-    isExistingCharity(req.body)
+    _isExistingCharity(req.body)
       .then(() => new Charity(req.body).save())
       .then((charity) => {
         charity.populate('raffles');

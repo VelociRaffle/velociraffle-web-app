@@ -4,7 +4,7 @@ import {
 } from 'common-errors';
 import User from './model';
 
-import { VALID_OBJECT_ID } from '../../../util/validations';
+import { VALID_OBJECT_ID } from '../../../util/constants';
 
 /* ********************
  *  HELPER FUNCTIONS *
