@@ -7,7 +7,9 @@ const { urlencoded, json } = bodyParser;
 const { crashProtector } = errors.middleware;
 
 export default (app) => {
-  app.use(morgan('dev'));
+  process.env.NODE_ENV !== 'testing'
+    ? app.use(morgan('dev'))
+    : null;
   app.use(urlencoded({ extended: true }));
   app.use(json());
   app.use(crashProtector());
