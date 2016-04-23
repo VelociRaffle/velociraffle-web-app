@@ -1,6 +1,7 @@
 {
   "exec": "babel-node",
   "ignore": [
-    "client/*"
+    "client/*",
+    "dist/*"
   ]
 }

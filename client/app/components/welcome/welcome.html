@@ -1,59 +1,169 @@
 <section id="welcome">
+  <div
+    id="hero"
+    class="row"
+    style="height: 550px;">
+    <div class="col-xs-12">
+      <div class="row" style="margin-top: 145px;">
+        <div class="col-sm-4 col-sm-offset-1 col-xs-12 text-center" style="margin-top: 10px;">
+          <img src="{{ ::vm.logo }}" />
+        </div>
+
+        <div class="col-sm-6 col-xs-12 text-center">
+          <h1 class="strong">Have fun while donating.</h1>
+          <h2>Win raffles and support amazing causes.</h2>
+          <a class="btn btn-primary">
+            View Active Raffles
+          </a>
+          <p>100% of profits donated</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="meet-henry" class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-xs-12 text-center">
+      <h2>Meet Henry</h2>
+
+      <!-- Just Henry's face in a circle -->
+      <div class="text-left">
+        <p>
+          Way back in 2015, Chris and Gerry, we'll call them 'Kerry', first spotted a young raptor whilst gallivanting around the park, as two young men do. After Snapchatting, Facebooking, and Instagramming the jurassic sighting, <span class="strong italic">the duo cautiously approached the orange Velociraptor</span>.
+        </p>
+        <p>
+          "Henry's my name and Charity is my game", screeched the reptile (apparently rhyming is his game as well). Completely shocked by the walking, talking orange Velociraptor, <span class="strong italic">they asked Henry, "How can we help?"</span>
+        </p>
+        <p>
+          <span class="strong italic">Having been banned from nearly every charitable organization, Henry's dream of giving to charity was becoming extinct faster than the dinosaurs…too soon?</span> Imagine trying to build a house without opposable thumbs, or the disapproving looks he received at the Food Bank where he ate more than he served, and don't even get Henry started with the Humane Society fiasco…
+        </p>
+        <p>
+          In an effort to help Henry, <span class="strong italic">Chris & Gerry (Kerry) came up with a way to give Men, Women & Velociraptors alike, the opportunity to raise money for deserving causes</span> & charities with a simple swipe of a raptor claw! <span class="strong italic">Thus, VelociRaffle was born!</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="how-it-works-row" class="row">
+    <div class="col-xs-12 text-center">
+      <h2>How it Works</h2>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <h4><i class="fa fa-envelope-o"></i> Join</h4>
+          <p class="text-left">
+            <a>Join our newsletter</a> to receive info about upcoming raffles. We'll let you know the prize and the benefitting cause.
+          </p>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+          <h4><i class="fa fa-ticket"></i> Buy</h4>
+          <p class="text-left">
+            <a ui-sref="active-raffles">$5 per ticket</a>. Buy more than one if you love the cause or the prize!
+          </p>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+          <h4><i class="fa fa-trophy"></i> Win</h4>
+          <p class="text-left">
+            <a>Watch the raffle on YouTube</a>! 1st place wins the prize and a number of people receive a free ticket for the next raffle.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="prizes-row" class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Some Previous Prizes</h2>
+      <div class="row">
+        <!-- For smaller views, remove the FitBit -->
+        <div class="col-sm-3 col-xs-12 text-center" style="margin-top: 30px;">
+          <img src="http://ecx.images-amazon.com/images/I/51l4L5ObYML._SL1024_.jpg" />
+        </div>
+        <div class="col-sm-3 col-xs-12 text-center">
+          <img src="https://static1.fitbit.com/simple.b-cssdisabled-png.h1b5eeed389c93a00f375564cdec89e54.pack?items=%2Fcontent%2Fassets%2Fcharge%2Fimages%2Fslide-01-charge.png" />
+        </div>
+        <div class="col-sm-3 col-xs-12 text-center">
+          <img src="http://store.storeimages.cdn-apple.com/4951/as-images.apple.com/is/image/AppleInc/aos/published/images/s/38/s38sg/sbbk/s38sg-sbbk-sel-201509_GEO_US?wid=848&hei=848&fmt=jpeg&qlt=80&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1441818470783" />
+        </div>
+        <div class="col-sm-3 col-xs-12 text-center">
+          <img src="http://cdn.yeticoolers.com/media/catalog/product/cache/1/thumbnail/600x600/9df78eab33525d08d6e5fb8d27136e95/y/t/yt35bf_new.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-xs-12 text-center">
-      <img id="main-logo" src="{{ ::vm.logo }}" />
+      <h2>What Others Think</h2>
+      <img class="testimonial-photo" src="{{ ::vm.wade }}" />
+      <h3 style="display: inline-block; margin: 0px 0px 40px 10px;">Wade H.</h3>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-xs-12 text-left">
+          <p>
+            The creators of VelociRaffle do an excellent job coming up with new and creative ideas to make the raffle a fun and entertaining avenue to donate to great causes.
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="text-center col-xs-12">
+          <i class="fa text-muted fa-lg fa-chevron-left" style="margin-right: 10px;"></i>
+          <i class="fa text-muted fa-lg fa-circle" style="margin-right: 10px;"></i>
+          <i class="fa text-muted fa-lg fa-circle-o" style="margin-right: 10px;"></i>
+          <i class="fa text-muted fa-lg fa-circle-o" style="margin-right: 10px;"></i>
+          <i class="fa text-muted fa-lg fa-chevron-right" style=""></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="charities-row" class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Some Previous Charities</h2>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="row">
+            <div class="col-sm-4 col-xs-12">
+              <a href="https://www.childfund.org/">
+                <img src="https://sawyer.com/wp-content/uploads/2014/01/ChildFund-International-JPG-Web-MSOffice.jpg" />
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <a href="http://www.cancer.org/">
+                <img src="http://photos.prnewswire.com/prnfull/20141119/159748LOGO" />
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <a href="http://www.openhandatlanta.org/">
+                <img src="http://techbridge.org/alpha/wp-content/uploads/2015/05/9405125.jpg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-xs-12">
-      <h1>2-3 sentence value prop here. Mimic Slack but with ridiculousness.</h1>
-    </div>
-  </div>
+    <div class="col-xs-12 text-center">
+      <h2>Join Our Newsletter</h2>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <a
-        ui-sref="active-raffles"
-        class="btn btn-block btn-primary">
-        Get Started
-      </a>
-    </div>
-  </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+          <div class="form-group" style="display: inline-block; width: 50%;">
+            <input class="form-control" type="text" placeholder="Enter your email address" />
+          </div>
+          <a class="btn btn-primary" style="display: inline-block; margin-left: 15px;">
+            Sign Up
+          </a>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      Meet Henry (Chris to create first draft of backstory)
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      Charities (stats plus + highlighted charity)
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      Prizes (same)
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      The Cool Kids (currently What Others Think)
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      How It Works
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      Another CTA
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a>or view the active raffles!</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -40,6 +40,7 @@
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-jwt": "^3.3.0",
+    "font-awesome": "^4.6.1",
     "foreman": "^1.4.1",
     "helmet": "^1.1.0",
     "jsonwebtoken": "^5.7.0",

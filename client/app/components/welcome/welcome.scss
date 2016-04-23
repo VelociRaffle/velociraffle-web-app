@@ -6,24 +6,99 @@ $logo-width-sm: 75%;
 $logo-width-md: 60%;
 $logo-width-lg: 60%;
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 #welcome {
   position: relative;
 
-  #main-logo {
-    @include xs-only {
-      width: $logo-width-xs;
+  & > .row:nth-of-type(2n + 1) {
+    background-color: #F6F6F6;
+  }
+
+  & > .row {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  & > .row:first-of-type {
+    padding-top: 0px;
+  }
+
+  #hero {
+    img {
+      max-width: 100%;
     }
 
-    @include sm-only {
-      width: $logo-width-sm;
+    h2 {
+      margin-bottom: 30px;
     }
 
-    @include md-only {
-      width: $logo-width-md;
+    p {
+      margin-top: 20px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 35px;
+  }
+
+  #meet-henry {
+    p {
+      margin-bottom: 20px;
     }
 
-    @include lg-only {
-      width: $logo-width-lg;
+    p:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+
+  #how-it-works-row {
+    h4 {
+      font-size: 35px;
+    }
+  }
+
+  #prizes-row {
+    img {
+      max-width: 100%;
+      max-height: 250px;
+    }
+  }
+
+  .testimonial-photo {
+    height: 60px;
+    width: 60px;
+    @include border-radius(30px);
+  }
+
+  #charities-row {
+    img {
+      max-width: 100%;
+      max-height: 100px;
     }
   }
 }
+
+/*#main-logo {
+  @include xs-only {
+    width: $logo-width-xs;
+  }
+
+  @include sm-only {
+    width: $logo-width-sm;
+  }
+
+  @include md-only {
+    width: $logo-width-md;
+  }
+
+  @include lg-only {
+    width: $logo-width-lg;
+  }
+}
+*/
