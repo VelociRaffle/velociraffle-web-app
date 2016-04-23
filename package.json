@@ -4,7 +4,7 @@
   "description": "Web application (server + web client) for VelociRaffle",
   "main": "index.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm start:dev",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "nf start dev",
     "start:prod": "nf start web",
     "start:client": "gulp",
