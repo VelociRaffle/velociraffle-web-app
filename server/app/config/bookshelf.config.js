@@ -1,9 +1,13 @@
 import knex from 'knex';
 import bookshelf from 'bookshelf';
-import config from './knexfile';
+import knexConfig from './knexfile';
+
+const dbConfig = process.env.NODE_ENV === 'development'
+  ? knexConfig.development
+  : knexConfig.production;
 
 const Bookshelf = bookshelf(
-  knex(config.development)
+  knex(dbConfig)
 );
 
 Bookshelf.plugin('registry');
