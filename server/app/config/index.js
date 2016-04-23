@@ -20,7 +20,7 @@ let envConfig;
 
 // pulls in config file based on NODE_ENV (config.env)
 try {
-  envConfig = require('./' + config.env);
+  envConfig = require('./env/' + config.env);
   envConfig = envConfig.default || {};
 } catch (e) {
   envConfig = {};
