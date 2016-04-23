@@ -20,7 +20,8 @@
     "url": "https://github.com/rgpass/velociraffle-web-app"
   },
   "engines": {
-    "node": "4.1.1"
+    "node": "4.4.3",
+    "npm": "3.8.7"
   },
   "keywords": [
     "charity",
