@@ -1,3 +1,7 @@
 {
-  "exec": "babel-node"
+  "exec": "babel-node",
+  "ignore": [
+    "client/*",
+    "dist/*"
+  ]
 }
