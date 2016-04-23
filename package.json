@@ -4,13 +4,13 @@
   "description": "Web application (server + web client) for VelociRaffle",
   "main": "index.js",
   "scripts": {
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "babel server -d serverDist",
+    "build:client": "gulp build",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "nf start dev",
     "start:prod": "nf start web",
     "start:client": "gulp",
-    "build": "npm run build:server && npm run build:client",
-    "build:server": "babel server -d serverDist",
-    "build:client": "gulp build",
     "precommit": "jscs . --fix && eslint ./client/app && npm test",
     "postinstall": "npm run build",
     "test": "karma start"
