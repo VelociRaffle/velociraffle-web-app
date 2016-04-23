@@ -50,6 +50,7 @@
     "express": "^4.13.3",
     "express-jwt": "^3.3.0",
     "file-loader": "^0.8.4",
+    "font-awesome": "^4.6.1",
     "foreman": "^1.4.1",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",

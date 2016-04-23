@@ -2,16 +2,22 @@
 
 $bottom-extra-buffer: 50px;
 
+body {
+  padding-top: 45px;
+}
+
 #app {
-  margin-bottom: $bottom-extra-buffer;
+  /*margin-bottom: $bottom-extra-buffer;*/
 
   a {
     color: $brand-primary;
+    font-weight: bold;
 
     transition: color 0.1s ease-in;
 
     &:hover, &:focus {
       color: $brand-warning;
+      cursor: pointer;
 
       text-decoration: none;
     }
@@ -31,5 +37,32 @@ $bottom-extra-buffer: 50px;
     &:hover {
       color: $brand-primary;
     }
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-top: 0px;
+  }
+
+  h2 {
+    font-size: 23px
+  }
+
+  h1, h2 {
+    color: #323232;
+  }
+
+  p {
+    font-size: 18px;
+    color: #666;
+    line-height: 30px;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .italic {
+    font-style: italic;
   }
 }

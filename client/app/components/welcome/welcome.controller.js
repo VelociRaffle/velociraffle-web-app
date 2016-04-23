@@ -1,13 +1,10 @@
 import logo from '../../../images/logo.png';
+import wade from '../../../images/wade.png';
 
 class WelcomeController {
   constructor() {
     this.logo = logo;
-
-    this._activate();
-  }
-
-  _activate() {
+    this.wade = wade;
   }
 }
 
