@@ -4,6 +4,7 @@
   "description": "Web application (server + web client) for VelociRaffle",
   "main": "index.js",
   "scripts": {
+    "build": "babel server -d serverDist",
     "precommit": "jscs . --fix && eslint ./client/app && npm test",
     "postinstall": "npm run build",
     "dev-client": "gulp",
