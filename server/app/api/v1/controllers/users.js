@@ -16,7 +16,7 @@ const _isExistingUser = ({ email }) => (
       if (existingUser) {
         throw new AlreadyInUseError('User', 'email');
       }
-      
+
       return null;
     })
 );
@@ -93,7 +93,7 @@ const update = (req, res, next) => {
 const create = (req, res, next) => {
   _isExistingUser(req.body)
     .then(() => new User(req.body).save())
-    .then(charity => res.json({ user }))
+    .then(user => res.json({ user }))
     .catch(err => next(err));
 };
 

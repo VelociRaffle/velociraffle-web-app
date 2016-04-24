@@ -137,6 +137,6 @@ const destroy = (req, res, next) => (
 );
 
 export default {
-  params, get, all, 
+  params, get, all,
   update, create, destroy
 };
