@@ -1,7 +1,10 @@
 import { Router } from 'express';
-import Charities from '../controllers/charities.js';
+import Charities from '../../controllers/charities';
+import raffleRouter from './raffles';
 
 const charityRouter = Router();
+
+charityRouter.use('/:charityId/raffles', raffleRouter);
 
 charityRouter.param('charityId', Charities.params);
 
